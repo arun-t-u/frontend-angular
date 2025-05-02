@@ -19,7 +19,7 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy built Angular app to Nginx's public folder
-COPY --from=builder /app/dist/<your-project-name> /usr/share/nginx/html
+COPY --from=builder /app/dist/frontend-angular /usr/share/nginx/html
 
 # Copy custom Nginx config (optional but recommended for SPAs)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
